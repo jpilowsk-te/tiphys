@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tiphys
+  description: Tiphys - the engine that facilitates "Github Deployment Driven GitOps" at ThousandEyes
+  labels:
+    app.kubernetes.io/name: tiphys-server
+    product: cicd
+  annotations:
+    cicd.thousandeyes.com/release-info: "true"
+    roadie-backstage-pull-requests/default-filter: "true"
+    github.com/project-slug: jpilowsk/tiphys
+    github.com/team-slug: thousandeyes/engineering-effectiveness
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-selector: application-name=tiphys-server
+    backstage.io/code-coverage: enabled
+  tags:
+    - go
+    - backend
+    - gitops
+spec:
+  type: service
+  lifecycle: production
+  owner: engineering-effectiveness
